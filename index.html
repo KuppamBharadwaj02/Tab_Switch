@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Showcase</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #ffe6e6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 20px 0;
+            color: #ff4d4d;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        .content-wrapper {
+            width: 95%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .image-display {
+            width: 48%;
+            height: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid #ff9999;
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .info-display {
+            width: 48%;
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            border: 3px solid #ff9999;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            width: 24%;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            background-color: #ffe6e6;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background-color: #ff6666;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .details {
+            color: #333;
+        }
+
+        .details h2 {
+            margin-bottom: 15px;
+            color: #ff4d4d;
+        }
+
+        .details p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .details p span {
+            font-weight: bold;
+            color: #ff4d4d;
+        }
+
+        .details ul {
+            margin-top: 10px;
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Food Showcase</h1>
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="image-display">
+                <img src="pizza.jpg" class="image" id="image-pizza">
+                <img src="burger.jpg" class="image" id="image-burger" style="display: none;">
+                <img src="fries.jpg" class="image" id="image-fries" style="display: none;">
+                <img src="icecream.jpg" class="image" id="image-icecream" style="display: none;">
+            </div>
+            <div class="info-display">
+                <div class="tabs">
+                    <button onclick="showContent('pizza')" id="btn-pizza" class="tab active">Pizza</button>
+                    <button onclick="showContent('burger')" id="btn-burger" class="tab">Burger</button>
+                    <button onclick="showContent('fries')" id="btn-fries" class="tab">Fries</button>
+                    <button onclick="showContent('icecream')" id="btn-icecream" class="tab">Ice Cream</button>
+                </div>
+                <div class="details" id="details-pizza">
+                    <h2>Pizza</h2>
+                    <p><span>Pizza</span> is a beloved dish worldwide, known for its crispy crust, rich tomato sauce, and melting cheese. Whether topped with classic pepperoni, fresh veggies, or gourmet ingredients like truffle oil, pizza is incredibly versatile. </p>
+                    <ul>
+                        <li>Popular varieties: Margherita, Pepperoni, Veggie, BBQ Chicken.</li>
+                        <li>Best served hot with dipping sauces like garlic butter or marinara.</li>
+                        <li>Pair it with soft drinks or wine for an ultimate experience.</li>
+                    </ul>
+                </div>
+                <div class="details" id="details-burger" style="display: none;">
+                    <h2>Burger</h2>
+                    <p>A <span>burger</span> is a universal favorite, featuring a juicy patty sandwiched between toasted buns. From classic beef patties to plant-based options, burgers cater to every taste. </p>
+                    <ul>
+                        <li>Top choices: Cheeseburger, Bacon Burger, Veggie Burger.</li>
+                        <li>Toppings include lettuce, tomato, onions, pickles, and special sauces.</li>
+                        <li>Best paired with fries and a chilled milkshake or soda.</li>
+                    </ul>
+                </div>
+                <div class="details" id="details-fries" style="display: none;">
+                    <h2>French Fries</h2>
+                    <p><span>French fries</span>, often referred to as "fries," are a global snack staple. Made from fresh potatoes, sliced and fried to golden perfection, they are enjoyed plain or with a sprinkle of seasoning. </p>
+                    <ul>
+                        <li>Popular cuts: Shoestring, Waffle, Curly, Steak fries.</li>
+                        <li>Perfectly paired with dips like ketchup, cheese sauce, or garlic aioli.</li>
+                        <li>A common side dish for burgers, sandwiches, and fried chicken.</li>
+                    </ul>
+                </div>
+                <div class="details" id="details-icecream" style="display: none;">
+                    <h2>Ice Cream</h2>
+                    <p><span>Ice cream</span> is a dessert that never goes out of style. Available in a myriad of flavors like vanilla, chocolate, and exotic options such as matcha or mango, it’s a treat for every palate. </p>
+                    <ul>
+                        <li>Flavors range from classic to gourmet (e.g., salted caramel, pistachio).</li>
+                        <li>Served in cones, cups, sundaes, or as toppings for warm desserts.</li>
+                        <li>Perfect for celebrations or as a refreshing snack on hot days.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showContent(food) {
+            const images = document.querySelectorAll('.image');
+            const details = document.querySelectorAll('.details');
+            const buttons = document.querySelectorAll('.tab');
+
+            images.forEach(img => img.style.display = 'none');
+            details.forEach(detail => detail.style.display = 'none');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(`image-${food}`).style.display = 'block';
+            document.getElementById(`details-${food}`).style.display = 'block';
+            document.getElementById(`btn-${food}`).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
